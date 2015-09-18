@@ -1,6 +1,10 @@
 rem 切换到.proto协议所在的目录
 
 rem 将当前文件夹中的所有协议文件转换为cpp文件
+set DIR=%~dp0
+cd /d "%DIR%"
+if not exist %DIR%..\cpp mkdir %DIR%..\cpp 
+
 for %%i in (*.proto) do (  
 echo %%i
 protoc.exe  -I=./  --cpp_out=../cpp %%i
