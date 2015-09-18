@@ -1,0 +1,7 @@
+##
+##
+##编译流程
+##
+
+cd :当前路径
+cmake -G "Visual Studio 10"
