@@ -109,7 +109,7 @@ class Person : public ::google::protobuf::Message {
   inline ::std::string* release_name();
   inline void set_allocated_name(::std::string* name);
 
-  // optional string email = 3;
+  // required string email = 3;
   inline bool has_email() const;
   inline void clear_email();
   static const int kEmailFieldNumber = 3;
@@ -342,7 +342,7 @@ inline void Person::set_allocated_name(::std::string* name) {
   }
 }
 
-// optional string email = 3;
+// required string email = 3;
 inline bool Person::has_email() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }

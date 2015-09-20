@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "LuaManager.h"
+#include "lsproto.h"
 
 #pragma comment(lib,"lua5.1.lib")
 
 static LuaManager * m_pShareLuaManager = NULL;
+
 
 LuaManager* LuaManager::shareLuaManager()
 {
@@ -285,7 +287,7 @@ bool LuaManager::PushLuaData( lua_State* pState, _ParamData* pParamIn )
 
 	if (pParamIn->CompareType("string"))
 	{
-		lua_pushstring(pState,(char*)pParamIn->GetParam());
+		lua_pushlstring(pState,(char*)pParamIn->GetParam(),pParamIn->m_TypeLen);
 		return true;
 	}
 	else if (pParamIn->CompareType("int"))
@@ -318,8 +320,8 @@ bool LuaManager::PopLuaData( lua_State* pState, _ParamData* pParamOut, int nInde
 	{
 		if (lua_isstring(pState, nIndex) == 1)	//
 		{
-			const char* pData = (const char*)lua_tostring(pState, nIndex);
-			pParamOut->SetData((void* )pData, (int)strlen(pData));
+			const char* pData = (const char*)lua_tolstring(pState, nIndex,(size_t*)&pParamOut->m_TypeLen);
+			pParamOut->SetData((void* )pData,pParamOut->m_TypeLen);
 		}
 		return true;
 	}
@@ -365,6 +367,7 @@ LuaManager::LuaManager()
 	//luaopen_math(m_pls);         /* opens the math lib. */
 
 	 luaL_openlibs(m_pls);
+	 luaopen_sproto_core(m_pls);
 }
 
 LuaManager::~LuaManager()

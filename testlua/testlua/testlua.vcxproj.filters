@@ -16,6 +16,9 @@
     <Filter Include="Lua">
       <UniqueIdentifier>{15f211b8-f02a-4fb1-b847-d1b2e207bf01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sproto">
+      <UniqueIdentifier>{10088f67-453f-421a-9785-442a3333050b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -33,6 +36,15 @@
     <ClInclude Include="person.pb.h">
       <Filter>Lua</Filter>
     </ClInclude>
+    <ClInclude Include="msvcint.h">
+      <Filter>sproto</Filter>
+    </ClInclude>
+    <ClInclude Include="sproto.h">
+      <Filter>sproto</Filter>
+    </ClInclude>
+    <ClInclude Include="lsproto.h">
+      <Filter>sproto</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -46,6 +58,12 @@
     </ClCompile>
     <ClCompile Include="person.pb.cc">
       <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="sproto.c">
+      <Filter>sproto</Filter>
+    </ClCompile>
+    <ClCompile Include="lsproto.c">
+      <Filter>sproto</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

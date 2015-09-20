@@ -51,3 +51,8 @@ ipch
 .obj
 .sdf
 .pdb
+.suo
+.tlog
+.idb
+.opensdf
+

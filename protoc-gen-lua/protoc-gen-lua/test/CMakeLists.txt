@@ -1,6 +1,6 @@
-ï»¿project(pb)
-#æ·»åŠ å¤´æ–‡ä»¶
+project(pb)
+#Ìí¼ÓÍ·ÎÄ¼þ
 include_directories(../../../lua/include)
 add_library(pb SHARED pb.c)
-#é“¾æŽ¥åº“
+#Á´½Ó¿â
 target_link_libraries(pb ../../../lua/lib/lua5.1)

@@ -1,6 +1,11 @@
-ï»¿project(protobuf.c)
-#æ·»åŠ å¤´æ–‡ä»¶
+project(protobuf)
+#Ìí¼ÓÍ·ÎÄ¼þ
+
+
 include_directories(../../../lua/include)
-add_library(protobuf.c SHARED pbc-lua.c)
-#é“¾æŽ¥åº“
-target_link_libraries(pb ../../../lua/lib/lua5.1)
+include_directories(../../../pbc)
+add_library(protobuf  SHARED pbc-lua.c)
+#Á´½Ó¿â
+target_link_libraries(protobuf ../../../lua/lib/lua5.1)
+target_link_libraries(protobuf ../../../pbc/Release/pbc)
+set_target_properties(protobuf PROPERTIES COMPILE_FLAGS "/TP" ) 

@@ -102,7 +102,7 @@ void protobuf_AddDesc_person_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\014person.proto\"1\n\006Person\022\n\n\002id\030\001 \002(\005\022\014\n\004"
-    "name\030\002 \002(\t\022\r\n\005email\030\003 \001(\t\"\"\n\005Phone\022\013\n\003nu"
+    "name\030\002 \002(\t\022\r\n\005email\030\003 \002(\t\"\"\n\005Phone\022\013\n\003nu"
     "m\030\001 \002(\t\022\014\n\004type\030\002 \002(\005", 101);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "person.proto", &protobuf_RegisterTypes);
@@ -242,7 +242,7 @@ bool Person::MergePartialFromCodedStream(
         break;
       }
 
-      // optional string email = 3;
+      // required string email = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -291,7 +291,7 @@ void Person::SerializeWithCachedSizes(
       2, this->name(), output);
   }
 
-  // optional string email = 3;
+  // required string email = 3;
   if (has_email()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->email().data(), this->email().length(),
@@ -323,7 +323,7 @@ void Person::SerializeWithCachedSizes(
         2, this->name(), target);
   }
 
-  // optional string email = 3;
+  // required string email = 3;
   if (has_email()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->email().data(), this->email().length(),
@@ -358,7 +358,7 @@ int Person::ByteSize() const {
           this->name());
     }
 
-    // optional string email = 3;
+    // required string email = 3;
     if (has_email()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -418,7 +418,7 @@ void Person::CopyFrom(const Person& from) {
 }
 
 bool Person::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
 
   return true;
 }

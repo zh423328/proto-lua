@@ -10,8 +10,11 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-
+#ifndef  _MSC_VER
 #include <stdbool.h>
+#endif // ! _MSC_VER
+
+
 #if defined(__APPLE__)
     #include <malloc/malloc.h>
 #else
@@ -1076,7 +1079,7 @@ _add_rmessage(lua_State *L) {
 extern "C" {
 #endif
 
-int
+__declspec(dllexport) int
 luaopen_protobuf_c(lua_State *L) {
 	luaL_Reg reg[] = {
 		{"_env_new" , _env_new },

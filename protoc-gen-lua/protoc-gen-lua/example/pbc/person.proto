@@ -1,0 +1,10 @@
+message Person {
+  required int32 id = 1;
+  required string name = 2;
+  required string email = 3;
+}
+
+message Phone {
+    required string num = 1;
+    required int32 type = 2;
+}

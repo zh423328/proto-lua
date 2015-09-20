@@ -6,15 +6,14 @@ a()
 
 require 'lua/person_pb'
 
-function testpbc()
+function testpb()
 	-- body
 	local person= person_pb.Person()
 	person.id = 1000
 	person.name = "Alice"
-	person.email = "Alice@example.com"
+	person.email = "Alice"
 
 	local data = person:SerializeToString()
-
 	--local msg = person_pb.Person()
 
 	--msg:ParseFromString(data)
@@ -22,4 +21,3 @@ function testpbc()
 	--print(msg)
 	return data;
 end
-

@@ -250,7 +250,7 @@ def code_gen_enum_item(index, enum_value, env):
     full_name = env.get_local_name() + '.' + enum_value.name
     obj_name = full_name.upper().replace('.', '_') + '_ENUM'
     env.descriptor.append(
-        "local %s = protobuf.EnumValueDescriptor();\n"% obj_name
+        "%s = protobuf.EnumValueDescriptor();\n"% obj_name
     )
 
     context = Writer(obj_name)
@@ -266,7 +266,7 @@ def code_gen_enum(enum_desc, env):
     full_name = env.get_local_name()
     obj_name = full_name.upper().replace('.', '_')
     env.descriptor.append(
-        "local %s = protobuf.EnumDescriptor();\n"% obj_name
+        "%s = protobuf.EnumDescriptor();\n"% obj_name
     )
 
     context = Writer(obj_name)
@@ -286,7 +286,7 @@ def code_gen_field(index, field_desc, env):
     full_name = env.get_local_name() + '.' + field_desc.name
     obj_name = full_name.upper().replace('.', '_') + '_FIELD'
     env.descriptor.append(
-        "local %s = protobuf.FieldDescriptor();\n"% obj_name
+        "%s = protobuf.FieldDescriptor();\n"% obj_name
     )
 
     context = Writer(obj_name)
@@ -338,7 +338,7 @@ def code_gen_message(message_descriptor, env, containing_type = None):
     full_name = env.get_local_name()
     obj_name = full_name.upper().replace('.', '_')
     env.descriptor.append(
-        "local %s = protobuf.Descriptor();\n"% obj_name
+        "%s = protobuf.Descriptor();\n"% obj_name
     )
 
     context = Writer(obj_name)
@@ -447,4 +447,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

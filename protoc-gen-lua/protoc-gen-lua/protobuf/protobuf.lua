@@ -38,6 +38,7 @@ local containers = require "containers"
 local descriptor = require "descriptor"
 local FieldDescriptor = descriptor.FieldDescriptor
 local text_format = require "text_format"
+local io = require "io"
 
 module("protobuf")
 

@@ -3,13 +3,13 @@ local protobuf = require "protobuf"
 module('person_pb')
 
 
-local PERSON = protobuf.Descriptor();
-local PERSON_ID_FIELD = protobuf.FieldDescriptor();
-local PERSON_NAME_FIELD = protobuf.FieldDescriptor();
-local PERSON_EMAIL_FIELD = protobuf.FieldDescriptor();
-local PHONE = protobuf.Descriptor();
-local PHONE_NUM_FIELD = protobuf.FieldDescriptor();
-local PHONE_TYPE_FIELD = protobuf.FieldDescriptor();
+PERSON = protobuf.Descriptor();
+PERSON_ID_FIELD = protobuf.FieldDescriptor();
+PERSON_NAME_FIELD = protobuf.FieldDescriptor();
+PERSON_EMAIL_FIELD = protobuf.FieldDescriptor();
+PHONE = protobuf.Descriptor();
+PHONE_NUM_FIELD = protobuf.FieldDescriptor();
+PHONE_TYPE_FIELD = protobuf.FieldDescriptor();
 
 PERSON_ID_FIELD.name = "id"
 PERSON_ID_FIELD.full_name = ".Person.id"
@@ -35,7 +35,7 @@ PERSON_EMAIL_FIELD.name = "email"
 PERSON_EMAIL_FIELD.full_name = ".Person.email"
 PERSON_EMAIL_FIELD.number = 3
 PERSON_EMAIL_FIELD.index = 2
-PERSON_EMAIL_FIELD.label = 1
+PERSON_EMAIL_FIELD.label = 2
 PERSON_EMAIL_FIELD.has_default_value = false
 PERSON_EMAIL_FIELD.default_value = ""
 PERSON_EMAIL_FIELD.type = 9

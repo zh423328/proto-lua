@@ -1,5 +1,5 @@
-protobuf = require "protobuf"
-parser = require "parser"
+local protobuf = require "protobuf"
+local parser = require "parser"
 
 t = parser.register("addressbook.proto","../../test")
 
