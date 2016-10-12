@@ -56,3 +56,4 @@ ipch
 .idb
 .opensdf
 
+*.sdf
